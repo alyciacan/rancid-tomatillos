@@ -23,17 +23,24 @@ class App extends Component {
     //console.log(this.state.singleMovie) //I notice this isn't CL'ing on first click
   }
 
+  goBack = () => {
+    this.setState({ singleMovie: null })
+  }
+
   render() {
     return (
       <main className="App">
         <h1>Rancid Tomatillos</h1>
         <Navbar />
-        {this.state.singleMovie && <SingleMovie singleMovie={ this.state.singleMovie } />}
-        <MovieContainer 
+        {this.state.singleMovie && <SingleMovie 
+          singleMovie={ this.state.singleMovie } 
+          goBack={ this.goBack }
+          />}
+        {!this.state.singleMovie && <MovieContainer 
           allMovies={ this.state.allMovies }
           expandView={ this.expandView }
 
-        />
+        />}
       </main>
     )
   }

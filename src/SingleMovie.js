@@ -1,4 +1,5 @@
 import './SingleMovie.css';
+import backArrow from './backArrow.png';
 
 const SingleMovie = (props) => {
     return (
@@ -17,6 +18,7 @@ const SingleMovie = (props) => {
                 {/* <p>Genre: {props.genres}</p> */}
                 {/* <p>Budget: ${props.budget}</p> */}
                 <p>Release Date: {props.singleMovie.release_date}</p>
+                <img src={backArrow} alt="Arrow to go back" onClick={ props.goBack } />
             </div>
         </section>
     )
