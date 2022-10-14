@@ -8,7 +8,7 @@ const SingleMovie = (props) => {
                 <h1>{props.singleMovie.title}</h1>
                 <h4>
                     {props.singleMovie.release_date}   
-                 | {props.singleMovie.rating} 
+                 | {props.singleMovie.average_rating} 
                  {/* | {props.singleMovie.runtime} */}
                  </h4>
             </div>
