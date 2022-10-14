@@ -16,9 +16,9 @@ const MovieContainer = (props) => {
         />
         )
     })
-//   {console.log(movieCards)}
+
     return (
-        <div className="MovieContainer">
+        <div className="movieContainer">
             { movieCards }
         </div>
     )
