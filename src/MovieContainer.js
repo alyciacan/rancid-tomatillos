@@ -2,7 +2,6 @@ import './MovieContainer.css';
 import MovieCard from './MovieCard';
 
 const MovieContainer = (props) => {
-
     const movieCards = props.allMovies.map(movie => {
         return (
         <MovieCard 
@@ -13,10 +12,11 @@ const MovieContainer = (props) => {
             title={ movie.title }
             average_rating={ movie.average_rating }
             release_date={ movie.release_date }
+            expandView={props.expandView}
         />
         )
     })
-
+    
     return (
         <div className="movieContainer">
             { movieCards }
