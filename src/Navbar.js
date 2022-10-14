@@ -1,9 +1,15 @@
 import './Navbar.css';
 
-function Navbar() {
+const Navbar = () => {
     return (
-        <h1>Hi!</h1>
+     <ul>
+        <li>Action</li>
+        <li>Adventure</li>
+        <li>Animated</li>
+        <li>Comedy</li>
+        <li>Crime</li>
+     </ul>
     )
-}
+};
 
 export default Navbar;
