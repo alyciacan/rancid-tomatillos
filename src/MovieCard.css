@@ -1,3 +1,8 @@
 .movieCard {
     border: 3px solid cyan;
+    height: 450px;
+}
+
+.card-poster {
+    height: 200px;
 }

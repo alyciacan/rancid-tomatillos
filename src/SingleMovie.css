@@ -1,0 +1,9 @@
+.single-movie {
+    color: white;
+    border: 5px solid green;
+    height: 400px; 
+}
+
+.poster {
+    max-height: 200px;
+}

@@ -15,13 +15,24 @@ class App extends Component {
       singleMovie: null
     }
   }
+
+  expandView = (id) => {
+    this.setState({
+      singleMovie: this.state.allMovies.find(movie => movie.id === id)
+    })
+    //console.log(this.state.singleMovie) //I notice this isn't CL'ing on first click
+  }
+
   render() {
     return (
       <main className="App">
         <h1>Rancid Tomatillos</h1>
         <Navbar />
         {this.state.singleMovie && <SingleMovie singleMovie={ this.state.singleMovie } />}
-        <MovieContainer allMovies={ this.state.allMovies }
+        <MovieContainer 
+          allMovies={ this.state.allMovies }
+          expandView={ this.expandView }
+
         />
       </main>
     )
