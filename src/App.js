@@ -15,12 +15,12 @@ class App extends Component {
   }
   render() {
     return (
-      <main className="App">
-        {console.log(this.state.allMovies[0])}
-        <h1>Rancid Tomatillos</h1>
+      <main className='App'>
         <Navbar />
-        <MovieContainer allMovies={ this.state.allMovies }
-        />
+        <div className='Container'>
+          <h1>search place holder</h1>
+          <MovieContainer allMovies={ this.state.allMovies }/>
+        </div>
       </main>
     )
   }
