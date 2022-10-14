@@ -20,7 +20,6 @@ class App extends Component {
     this.setState({
       singleMovie: this.state.allMovies.find(movie => movie.id === id)
     })
-    //console.log(this.state.singleMovie) //I notice this isn't CL'ing on first click
   }
 
   goBack = () => {
