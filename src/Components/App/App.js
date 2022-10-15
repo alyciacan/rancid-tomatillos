@@ -1,9 +1,10 @@
 import './App.css';
 import { Component } from 'react';
-import movieData from './dummy_data';
-import MovieContainer from './MovieContainer';
-import Navbar from './Navbar';
-import SingleMovie from './SingleMovie';
+import { fetchAllMovies, fetchSingleMovie } from '../../apiCalls';
+// import movieData from '../../dummy_data';
+import MovieContainer from '../MovieContainer/MovieContainer';
+import Navbar from '../Navbar/Navbar';
+import SingleMovie from '../SingleMovie/SingleMovie';
 
 
 
@@ -11,14 +12,20 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      allMovies: movieData.movies,
+      allMovies: [],
       singleMovie: null
     }
   }
 
+  componentDidMount() {
+    fetchAllMovies()
+      .then(movieData => this.setState({ allMovies: movieData.movies }))
+  }
+
   expandView = (id) => {
-    this.setState({
-      singleMovie: this.state.allMovies.find(movie => movie.id === id)
+    fetchSingleMovie(id)
+      .then(movieData => {
+        this.setState({ singleMovie: movieData.movie })
     })
   }
 
