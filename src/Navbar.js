@@ -3,7 +3,7 @@ import './Navbar.css';
 const Navbar = () => {
   return (
     <div className='navbar'>
-        <h1>Rancid Tomatillos</h1>
+        <h1 className='appTitle'>Rancid Tomatillos</h1>
         <hr></hr>
         <p>Browse Movies By Genre</p>
         <hr></hr>
