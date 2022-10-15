@@ -29,17 +29,18 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <h1>Rancid Tomatillos</h1>
         <Navbar />
-        {this.state.singleMovie && <SingleMovie 
-          singleMovie={ this.state.singleMovie } 
-          goBack={ this.goBack }
+        <div className='Container'>
+          <h1>search place holder</h1>
+          {this.state.singleMovie && <SingleMovie 
+            singleMovie={ this.state.singleMovie } 
+            goBack={ this.goBack }
+            />}
+          {!this.state.singleMovie && <MovieContainer 
+            allMovies={ this.state.allMovies }
+            expandView={ this.expandView }
           />}
-        {!this.state.singleMovie && <MovieContainer 
-          allMovies={ this.state.allMovies }
-          expandView={ this.expandView }
-
-        />}
+        </div>
       </main>
     )
   }
