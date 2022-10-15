@@ -5,7 +5,7 @@ const Navbar = () => {
     <div className='navbar'>
         <h1 className='appTitle'>Rancid Tomatillos</h1>
         <hr></hr>
-        <p>Browse Movies By Genre</p>
+        <p>Browse By Genre</p>
         <hr></hr>
         <ul className='genreList'>
             <li>Action</li>
