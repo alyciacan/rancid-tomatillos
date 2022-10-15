@@ -1,6 +1,9 @@
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const genres = props.genresList.map(genre => {
+    return <li>{genre}</li>
+  })
   return (
     <div className='navbar'>
         <h1 className='appTitle'>Rancid Tomatillos</h1>
@@ -8,20 +11,7 @@ const Navbar = () => {
         <p>Browse By Genre</p>
         <hr></hr>
         <ul className='genreList'>
-            <li>Action</li>
-            <li>Adventure</li>
-            <li>Animated</li>
-            <li>Comedy</li>
-            <li>Crime</li>
-            <li>Drama</li>
-            <li>Fantasy</li>
-            <li>Historical</li>
-            <li>Horror</li>
-            <li>Musical</li>
-            <li>Romance</li>
-            <li>Science Fiction</li>
-            <li>Thriller</li>
-            <li>Western</li>
+        { genres }
         </ul>
     </div>
   )

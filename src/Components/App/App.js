@@ -13,13 +13,30 @@ class App extends Component {
     super();
     this.state = {
       allMovies: [],
-      singleMovie: null
+      singleMovie: null,
+      genresList: []
     }
   }
 
+  getGenres = () => {
+    this.state.allMovies.forEach(film => {
+      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${film.id}`)
+        .then(resp => resp.json())
+        .then(data => { data.movie.genres.filter(genre => {
+          if(!this.state.genresList.includes(genre)) {
+            this.setState({ genresList: [...this.state.genresList, genre] })
+            }
+        })
+        }
+        )
+  })
+}
+
   componentDidMount() {
     fetchAllMovies()
-      .then(movieData => this.setState({ allMovies: movieData.movies }))
+      .then(movieData => {
+        this.setState({ allMovies: movieData.movies })})
+      .then(() => this.getGenres())
   }
 
   expandView = (id) => {
@@ -36,7 +53,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <Navbar allMovies={ this.state.allMovies } />
+        <Navbar getGenres={ this.getGenres } genresList={ this.state.genresList }/>
         <div className='Container'>
           <h1>search place holder</h1>
           {this.state.singleMovie && <SingleMovie 
