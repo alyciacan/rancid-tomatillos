@@ -13,6 +13,15 @@ const Navbar = () => {
             <li>Animated</li>
             <li>Comedy</li>
             <li>Crime</li>
+            <li>Drama</li>
+            <li>Fantasy</li>
+            <li>Historical</li>
+            <li>Horror</li>
+            <li>Musical</li>
+            <li>Romance</li>
+            <li>Science Fiction</li>
+            <li>Thriller</li>
+            <li>Western</li>
         </ul>
     </div>
   )

@@ -29,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <Navbar />
+        <Navbar allMovies={ this.state.allMovies } />
         <div className='Container'>
           <h1>search place holder</h1>
           {this.state.singleMovie && <SingleMovie 
