@@ -1,5 +1,5 @@
 import './MovieContainer.css';
-import MovieCard from './MovieCard';
+import MovieCard from '../MovieCard/MovieCard';
 
 const MovieContainer = (props) => {
     const movieCards = props.allMovies.map(movie => {
