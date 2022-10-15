@@ -1,9 +1,31 @@
 .single-movie {
+    display: flex;
     color: white;
-    border: 5px solid green;
-    height: 400px; 
+    box-shadow: 0px 0px 4px 4px rgba(255, 255, 255, 0.5);
+    width: 88.5vw;
+    height: 75vh;
+}
+
+.movie-stats {
+    display: flex;
+    flex-direction: column;
+    margin: 1%;
 }
 
 .poster {
-    max-height: 200px;
+    border: 2px solid #ffffff;
+    height: 50vh;
+}
+
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 72.5vw;
+    margin: 1%;
+}
+
+.backArrow {
+    display: flex;
+    justify-content: flex-end;
 }

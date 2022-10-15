@@ -3,9 +3,9 @@ import './Navbar.css';
 const Navbar = () => {
   return (
     <div className='navbar'>
-        <h1>Rancid Tomatillos</h1>
+        <h1 className='appTitle'>Rancid Tomatillos</h1>
         <hr></hr>
-        <p>Browse Movies By Genre</p>
+        <p>Browse By Genre</p>
         <hr></hr>
         <ul className='genreList'>
             <li>Action</li>
