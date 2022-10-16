@@ -1,7 +1,7 @@
 import './Navbar.css';
 
 const Navbar = (props) => {
-  const genres = props.genresList.map(genre => {
+  const genres = props.genresList.sort().map(genre => {
     return <li>{genre}</li>
   })
   return (
