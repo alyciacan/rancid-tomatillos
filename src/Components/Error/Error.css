@@ -1,0 +1,15 @@
+.error-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #F0C808;
+  margin-top: 2.5%;
+  width: 88.5vw;
+  overflow: hidden;
+}
+
+.sad-face {
+  margin-top: 2.5%;
+  width: 25vw;
+}

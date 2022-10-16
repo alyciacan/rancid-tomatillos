@@ -1,12 +1,10 @@
 import './App.css';
 import { Component } from 'react';
 import { fetchAllMovies, fetchSingleMovie } from '../../apiCalls';
-// import movieData from '../../dummy_data';
-import MovieContainer from '../MovieContainer/MovieContainer';
 import Navbar from '../Navbar/Navbar';
+import MovieContainer from '../MovieContainer/MovieContainer';
 import SingleMovie from '../SingleMovie/SingleMovie';
-
-
+import Error from '../Error/Error';
 
 class App extends Component {
   constructor() {
@@ -14,7 +12,8 @@ class App extends Component {
     this.state = {
       allMovies: [],
       singleMovie: null,
-      genresList: []
+      genresList: [],
+      error: ''
     }
   }
 
@@ -25,25 +24,25 @@ class App extends Component {
         .then(data => { data.movie.genres.filter(genre => {
           if(!this.state.genresList.includes(genre)) {
             this.setState({ genresList: [...this.state.genresList, genre] })
-            }
+          }
+          return this.state.genresList
         })
-        }
-        )
-  })
-}
+      })
+    })
+  }
 
   componentDidMount() {
     fetchAllMovies()
-      .then(movieData => {
-        this.setState({ allMovies: movieData.movies })})
+      .then(movieData => this.setState({ allMovies: movieData.movies }))
       .then(() => this.getGenres())
+      .catch(error => this.setState({ error: error.message }))
   }
 
   expandView = (id) => {
+    // const currentMovie = this.state.allMovies.find(movie => movie.id === id)
     fetchSingleMovie(id)
-      .then(movieData => {
-        this.setState({ singleMovie: movieData.movie })
-    })
+      .then(movieData => this.setState({ singleMovie: movieData.movie }))
+      .catch(error => this.setState({ error: error.message }))
   }
 
   goBack = () => {
@@ -60,10 +59,12 @@ class App extends Component {
             singleMovie={ this.state.singleMovie } 
             goBack={ this.goBack }
             />}
-          {!this.state.singleMovie && <MovieContainer 
-            allMovies={ this.state.allMovies }
-            expandView={ this.expandView }
-          />}
+          {((!this.state.singleMovie && !this.state.error) && 
+            <MovieContainer 
+              allMovies={ this.state.allMovies }
+              expandView={ this.expandView } 
+            />) || (this.state.error && <Error />)
+          }
         </div>
       </main>
     )
