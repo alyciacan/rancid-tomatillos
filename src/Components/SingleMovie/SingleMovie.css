@@ -2,31 +2,52 @@
     display: flex;
     color: white;
     box-shadow: 0px 0px 4px 4px rgba(255, 255, 255, 0.5);
-    width: 88.5vw;
-    height: 75vh;
+    min-width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .movie-stats {
     display: flex;
     flex-direction: column;
-    margin: 1%;
+    margin: 3%;
+    z-index: 2;
+    max-height: 100%;
+    justify-content: space-around;
 }
 
 .poster {
     border: 2px solid #ffffff;
     height: 50vh;
+    z-index: 2;
 }
 
 .movie-details {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 72.5vw;
+    width: 80%;
     margin: 1%;
+    z-index: 2;
+    padding: 5px;
 }
 
 .backArrow {
     display: flex;
     justify-content: flex-end;
     cursor: pointer;
+}
+
+.transparent-wrap {
+    max-height: 100%;
+    max-width: 100%;
+    background-color: black;
+    opacity: 60%;
+    position: absolute;
+    z-index: 1;
+}
+
+h1,
+h4 {
+    margin: 0px;
 }

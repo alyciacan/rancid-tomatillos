@@ -2,16 +2,16 @@ import './SingleMovie.css';
 import backArrow from './backArrow.png';
 
 const SingleMovie = (props) => {
-    console.log(props.singleMovie.backdrop_path)
     const background = {
         backgroundImage: `url(${props.singleMovie.backdrop_path})`,
         backgroundSize: 'cover',
-        backgroundColor: 'rgba(0, 0, 0, 0.1)'
+        minWidth: '100%'
     }
 
-    console.log(background)
     return (
         <section className='single-movie' style={ background }>
+            <div className="transparent-wrap">
+            </div>
             <div className='movie-stats'>
                 <img className='poster' src={props.singleMovie.poster_path} alt={`${props.singleMovie.title} Movie Poster`} />
                 <h1>{props.singleMovie.title}</h1>
@@ -21,7 +21,6 @@ const SingleMovie = (props) => {
             <div className='movie-details'>
                 <p>Genre: {props.singleMovie.genres}</p>
                 <p>Description: {props.singleMovie.overview}</p>
-
                 <div className='backArrow'>
                     <img role='button' src={backArrow} alt='back button' width='75vw' height='75vh' onClick={ props.goBack } />
                 </div>
