@@ -30,3 +30,8 @@
     justify-content: flex-end;
     cursor: pointer;
 }
+
+.single-genre {
+    display: inline;
+    list-style: none;
+}
