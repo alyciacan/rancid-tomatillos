@@ -1,8 +1,8 @@
 .movieContainer {
-  max-width: 100%;
+  max-width: 90%;
   height: 75vh;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  /* overflow-x: scroll;
+  overflow-y: hidden; */
   scrollbar-color: black;
   position: relative;
 }
