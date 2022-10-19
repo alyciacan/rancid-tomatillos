@@ -18,7 +18,7 @@ const SingleMovie = (props) => {
                 <h4>Runtime: {`${props.singleMovie.runtime} minutes`}</h4>
             </div>
             <div className='movie-details'>
-                <p><ul>{genres}</ul></p>
+                <ul className="genre-box">Genres: {genres}</ul>
                 <p>Description: {props.singleMovie.overview}</p>
 
                 <div className='backArrow'>
