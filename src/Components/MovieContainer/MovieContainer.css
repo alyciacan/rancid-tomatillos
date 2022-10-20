@@ -1,9 +1,8 @@
 .movieContainer {
-  display: flex;
-  align-items: center;
-  width: 88.5vw;
+  max-width: 96%;
   height: 75vh;
-  overflow-x: scroll;
-  overflow-y: hidden;
   scrollbar-color: black;
+  position: relative;
 }
+
+

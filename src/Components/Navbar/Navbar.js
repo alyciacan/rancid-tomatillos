@@ -1,4 +1,5 @@
 import './Navbar.css';
+import logo from './logo.png';
 
 const Navbar = (props) => {
   const genresList = ['Action', 'Adventure', 'Drama', 'Fantasy', 'Thriller', 'Comedy', 'Crime', 'Horror', 'Romance', 'Animation', 'Family', 'Music', 'Western', 'Science Fiction', 'War', 'History' ]
@@ -7,7 +8,7 @@ const Navbar = (props) => {
   })
   return (
     <div className='navbar'>
-        <h1 className='appTitle'>Rancid Tomatillos</h1>
+        <img src={logo} alt="Rancid Tomatillos logo" className='appTitle' />
         <hr></hr>
         <p>Browse By Genre</p>
         <hr></hr>
