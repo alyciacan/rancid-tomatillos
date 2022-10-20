@@ -18,8 +18,11 @@ const SingleMovie = (props) => {
                 <h4>Runtime: {`${props.singleMovie.runtime} minutes`}</h4>
             </div>
             <div className='movie-details'>
-                <ul className="genre-box">Genres: {genres}</ul>
-                <p>Description: {props.singleMovie.overview}</p>
+                <h3>{props.singleMovie.tagline}</h3>
+                <hr />
+                <ul className="genre-box">{genres}</ul>
+                <hr />
+                <p>{props.singleMovie.overview}</p>
 
                 <div className='backArrow'>
                     <img role='button' src={backArrow} alt='back button' width='75vw' height='75vh' onClick={ props.goBack } />
