@@ -12,34 +12,32 @@ class App extends Component {
     this.state = {
       allMovies: [],
       singleMovie: null,
-      genresList: [],
       error: ''
     }
   }
 
-  getGenres = () => {
-    this.state.allMovies.forEach(film => {
-      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${film.id}`)
-        .then(resp => resp.json())
-        .then(data => { data.movie.genres.filter(genre => {
-          if(!this.state.genresList.includes(genre)) {
-            this.setState({ genresList: [...this.state.genresList, genre] })
-          }
-          return this.state.genresList
-        })
-      })
-    })
-  }
+  // getGenres = () => {
+  //   this.state.allMovies.forEach(film => {
+  //     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${film.id}`)
+  //       .then(resp => resp.json())
+  //       .then(data => { data.movie.genres.filter(genre => {
+  //         if(!this.state.genresList.includes(genre)) {
+  //           this.setState({ genresList: [...this.state.genresList, genre] })
+  //         }
+  //         return this.state.genresList
+  //       })
+  //     })
+  //   })
+  // }
 
   componentDidMount() {
     fetchAllMovies()
       .then(movieData => this.setState({ allMovies: movieData.movies }))
-      .then(() => this.getGenres())
+      // .then(() => this.getGenres())
       .catch(error => this.setState({ error: error.message }))
   }
 
   expandView = (id) => {
-    // const currentMovie = this.state.allMovies.find(movie => movie.id === id)
     fetchSingleMovie(id)
       .then(movieData => this.setState({ singleMovie: movieData.movie }))
       .catch(error => this.setState({ error: error.message }))
@@ -52,7 +50,10 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <Navbar getGenres={ this.getGenres } genresList={ this.state.genresList }/>
+        <Navbar 
+          // getGenres={ this.getGenres } 
+          // genresList={ this.state.genresList }
+          />
         <div className='Container'>
           <h1>search place holder</h1>
           {this.state.singleMovie && <SingleMovie 

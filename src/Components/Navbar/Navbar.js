@@ -1,7 +1,8 @@
 import './Navbar.css';
 
 const Navbar = (props) => {
-  const genres = props.genresList.sort().map(genre => {
+  const genresList = ['Action', 'Adventure', 'Drama', 'Fantasy', 'Thriller', 'Comedy', 'Crime', 'Horror', 'Romance', 'Animation', 'Family', 'Music', 'Western', 'Science Fiction', 'War', 'History' ]
+  const genres = genresList.sort().map(genre => {
     return <li className="genre">{genre}</li>
   })
   return (
