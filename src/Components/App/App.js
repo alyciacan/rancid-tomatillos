@@ -39,7 +39,6 @@ class App extends Component {
   }
 
   expandView = (id) => {
-    // const currentMovie = this.state.allMovies.find(movie => movie.id === id)
     fetchSingleMovie(id)
       .then(movieData => this.setState({ singleMovie: movieData.movie }))
       .catch(error => this.setState({ error: error.message }))
