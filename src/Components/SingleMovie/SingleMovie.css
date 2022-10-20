@@ -30,3 +30,15 @@
     justify-content: flex-end;
     cursor: pointer;
 }
+
+.single-movie-genre {
+    display: inline;
+    list-style: none;
+    margin: 0px 8px 0px 8px;
+}
+
+.genre-box {
+    display: flex;
+    justify-content: start;
+    font-weight: bold;
+}
