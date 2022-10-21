@@ -13,7 +13,7 @@ class App extends Component {
     this.state = {
       allMovies: [],
       singleMovie: null,
-      error: ''
+      error: null
     };
   }
 
@@ -33,6 +33,10 @@ class App extends Component {
     this.setState({ singleMovie: null });
   };
 
+  checkError = () => {
+    !this.state.error ? <MovieContainer allMovies={ this.state.allMovies } /> : <Error />
+  }
+
   render() {
     return (
       <main className="App">
@@ -42,9 +46,7 @@ class App extends Component {
             exact path='/' 
             render={ () => (
               <div className='Container'>
-                  <MovieContainer
-                    allMovies={ this.state.allMovies }
-                  />
+                {!this.state.error ? <MovieContainer allMovies={ this.state.allMovies } /> : <Error />}
               </div>
             ) }>
           </Route>
@@ -53,32 +55,18 @@ class App extends Component {
             render={ ({ match }) => {
               return (
               <div className="Container">
-                  <SingleMovie
+                {!this.state.error 
+                ?  <SingleMovie
                     id={ match.params.id }
                     singleMovie={ this.state.singleMovie }
                     goBack={ this.goBack }
                     expandView={ this.expandView }
-                  />
+                  /> 
+                : <Error />
+                }
               </div>
-    )} }>
+    )}}>
           </Route>
-          {/* <Navbar
-          getGenres={ this.getGenres } 
-          genresList={ this.state.genresList }
-          />
-          <div className='Container'>
-            <h1>search place holder</h1>
-            { this.state.singleMovie && <SingleMovie
-              singleMovie={ this.state.singleMovie }
-              goBack={ this.goBack }
-            /> }
-            { ((!this.state.singleMovie && !this.state.error) &&
-              <MovieContainer
-                allMovies={ this.state.allMovies }
-                expandView={ this.expandView }
-              />) || 
-            }
-          </div> */}
         </Switch>
       </main>
     );
