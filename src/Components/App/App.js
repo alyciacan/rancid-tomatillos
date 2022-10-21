@@ -36,43 +36,31 @@ class App extends Component {
   render() {
     return (
       <main className="App">
+      <Navbar />
         <Switch>
           <Route
-            exact path='/'
+            exact path='/' 
             render={ () => (
-              <div>
-                <Navbar
-                  getGenres={ this.getGenres }
-                  genresList={ this.state.genresList }
-                />
-                <div className='Container'>
+              <div className='Container'>
                   <MovieContainer
                     allMovies={ this.state.allMovies }
                   />
-                </div>
               </div>
             ) }>
           </Route>
           <Route
             path='/:id'
             render={ ({ match }) => {
-              console.log(match);
-              return <div>
-                <Navbar
-                  getGenres={ this.getGenres }
-                  genresList={ this.state.genresList }
-                />
-                <div className='Container'>
-                  <h1>search place holder</h1>
+              return (
+              <div className="Container">
                   <SingleMovie
                     id={ match.params.id }
                     singleMovie={ this.state.singleMovie }
                     goBack={ this.goBack }
                     expandView={ this.expandView }
                   />
-                </div>
-              </div>;
-            } }>
+              </div>
+    )} }>
           </Route>
           {/* <Navbar
           getGenres={ this.getGenres } 
