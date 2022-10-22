@@ -14,7 +14,8 @@ class App extends Component {
       allMovies: [],
       singleMovie: null,
       error: '',
-      filteredMovies: []
+      filteredMovies: [],
+      searching: false
     };
   }
 
@@ -22,6 +23,7 @@ class App extends Component {
     this.setState({ filteredMovies: this.state.allMovies.filter(movie => 
        movie.title.toLowerCase().includes(searchTerm.toLowerCase())
     ) })
+    this.setState({ searching: searchTerm })
 
   }
 
@@ -47,6 +49,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.filteredMovies)
     return (
       <main className="App">
       <Navbar filterSearch={ this.filterSearch } />
@@ -56,7 +59,7 @@ class App extends Component {
             render={ () => (
               <div className='Container'>
                   <MovieContainer
-                    allMovies={ !this.state.filteredMovies.length 
+                    moviesToRender={ !this.state.searching 
                       ? this.state.allMovies 
                       : this.state.filteredMovies }
                     slidesToShow={ this.slidesToShow }
