@@ -19,12 +19,21 @@ class App extends Component {
     };
   }
 
-  filterSearch = (searchTerm) => {
-    this.setState({ filteredMovies: this.state.allMovies.filter(movie => 
-       movie.title.toLowerCase().includes(searchTerm.toLowerCase())
-    ) })
-    this.setState({ searching: searchTerm })
+  filterByRating = (searchTerm) => {
+   return searchTerm === 'All' ? this.state.allMovies : (this.state.allMovies.filter(movie => 
+      movie.average_rating >= Number(searchTerm.slice(0, 1))
+      ))
+  }
 
+  filterByTitle = (searchTerm) => {
+    return this.state.allMovies.filter(movie => 
+      movie.title.toLowerCase().includes(searchTerm.toLowerCase()))
+  }
+
+  filterSearch = (searchTerm, filterBy) => {
+    const movies = filterBy === 'title' ? this.filterByTitle(searchTerm) : this.filterByRating(searchTerm);
+    this.setState({ filteredMovies: movies })
+    this.setState({ searching: searchTerm })
   }
 
   componentDidMount = () => {
@@ -49,7 +58,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.filteredMovies)
     return (
       <main className="App">
       <Navbar filterSearch={ this.filterSearch } />
