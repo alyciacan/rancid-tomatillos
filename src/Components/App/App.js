@@ -13,11 +13,19 @@ class App extends Component {
     this.state = {
       allMovies: [],
       singleMovie: null,
-      error: ''
+      error: '',
+      filteredMovies: []
     };
   }
 
-  componentDidMount() {
+  filterSearch = (searchTerm) => {
+    this.setState({ filteredMovies: this.state.allMovies.filter(movie => 
+       movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+    ) })
+
+  }
+
+  componentDidMount = () => {
     fetchAllMovies()
       .then(movieData => this.setState({ allMovies: movieData.movies }))
       .catch(error => this.setState({ error: error.message }));
@@ -33,17 +41,25 @@ class App extends Component {
     this.setState({ singleMovie: null });
   };
 
+  slidesToShow = () => {
+    const numFilteredMovies = this.state.filteredMovies.length;
+    return (numFilteredMovies < 4 && numFilteredMovies > 0 ? numFilteredMovies : 4)
+  }
+
   render() {
     return (
       <main className="App">
-      <Navbar />
+      <Navbar filterSearch={ this.filterSearch } />
         <Switch>
           <Route
             exact path='/' 
             render={ () => (
               <div className='Container'>
                   <MovieContainer
-                    allMovies={ this.state.allMovies }
+                    allMovies={ !this.state.filteredMovies.length 
+                      ? this.state.allMovies 
+                      : this.state.filteredMovies }
+                    slidesToShow={ this.slidesToShow }
                   />
               </div>
             ) }>
@@ -62,23 +78,6 @@ class App extends Component {
               </div>
     )} }>
           </Route>
-          {/* <Navbar
-          getGenres={ this.getGenres } 
-          genresList={ this.state.genresList }
-          />
-          <div className='Container'>
-            <h1>search place holder</h1>
-            { this.state.singleMovie && <SingleMovie
-              singleMovie={ this.state.singleMovie }
-              goBack={ this.goBack }
-            /> }
-            { ((!this.state.singleMovie && !this.state.error) &&
-              <MovieContainer
-                allMovies={ this.state.allMovies }
-                expandView={ this.expandView }
-              />) || 
-            }
-          </div> */}
         </Switch>
       </main>
     );

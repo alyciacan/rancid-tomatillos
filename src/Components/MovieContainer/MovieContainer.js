@@ -22,7 +22,7 @@ const MovieContainer = (props) => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: props.slidesToShow(),
     slidesToScroll: 4,
     arrows: true,
     responsive: [

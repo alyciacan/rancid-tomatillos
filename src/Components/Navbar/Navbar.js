@@ -7,13 +7,13 @@ class Navbar extends Component {
     super(props);
     this.state = {
       searchBar: "",
-
     }
   }
   handleChange = (e) => {
     this.setState({
       searchBar: e.target.value
     })
+    this.props.filterSearch(e.target.value)
   }
 
   clearInput = () => {
