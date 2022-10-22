@@ -15,6 +15,7 @@ const MovieContainer = (props) => {
         title={ movie.title }
         average_rating={ movie.average_rating }
         release_date={ movie.release_date }
+        data-cy="movie-card"
       />
     );
   });

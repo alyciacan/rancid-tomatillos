@@ -36,15 +36,15 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-      <Navbar />
+        <Navbar />
         <Switch>
           <Route
-            exact path='/' 
+            exact path='/'
             render={ () => (
               <div className='Container'>
-                  <MovieContainer
-                    allMovies={ this.state.allMovies }
-                  />
+                <MovieContainer
+                  allMovies={ this.state.allMovies }
+                />
               </div>
             ) }>
           </Route>
@@ -52,15 +52,16 @@ class App extends Component {
             path='/:id'
             render={ ({ match }) => {
               return (
-              <div className="Container">
+                <div className="Container">
                   <SingleMovie
                     id={ match.params.id }
                     singleMovie={ this.state.singleMovie }
                     goBack={ this.goBack }
                     expandView={ this.expandView }
                   />
-              </div>
-    )} }>
+                </div>
+              );
+            } }>
           </Route>
           {/* <Navbar
           getGenres={ this.getGenres } 
