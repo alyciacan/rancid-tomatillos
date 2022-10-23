@@ -57,15 +57,16 @@ class App extends Component {
     const numFilteredMovies = this.state.filteredMovies.length;
     return (numFilteredMovies < 4 && numFilteredMovies > 0 ? numFilteredMovies : 4)
   }
-  
+
   render() {
     return (
       <main className="App">
-      <Navbar filterSearch={ this.filterSearch } goBack={ this.goBack }/>
         <Switch>
           <Route
             exact path='/' 
             render={ () => (
+              <div className="main-view">
+              <Navbar filterSearch={ this.filterSearch } goBack={ this.goBack }/>
               <div className='Container'>
                 {!this.state.error 
                 ? <MovieContainer
@@ -76,6 +77,7 @@ class App extends Component {
                   />
                 : <Error />
                 }
+              </div>
               </div>
             ) }>
           </Route>
