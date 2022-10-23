@@ -32,7 +32,6 @@ class App extends Component {
   goBack = () => {
     this.setState({ singleMovie: null });
     this.setState({ error: null })
-    console.log(this.state.error)
   };
 
   checkError = () => {
