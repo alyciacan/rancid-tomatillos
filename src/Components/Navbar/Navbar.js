@@ -29,9 +29,11 @@ class Navbar extends Component {
             <img src={logo} role="button" alt="Rancid Tomatillos logo" />
           </Link>
           <hr></hr>
-          <p>Search by Title:</p>
-          <input type="text" id="title" value={ this.state.searchBar } onChange={ this.handleChange } />
-          <button type="button" onClick={ this.clearInput }>Clear</button>
+          <div className="title-search">
+            <p>Search by Title:</p>
+            <input type="text" id="title" value={ this.state.searchBar } onChange={ this.handleChange } />
+            <button type="button" onClick={ this.clearInput }>Clear</button>
+          </div>
           <hr></hr>
           <p>Filter by Ratings:</p>
           <select name="ratings" id="average_rating" onChange={ this.handleChange }>

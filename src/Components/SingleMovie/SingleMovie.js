@@ -2,6 +2,7 @@ import './SingleMovie.css';
 import backArrow from './backArrow.png';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../Navbar/logo.png';
 
 const SingleMovie = (props) => {
     useEffect(() => {
@@ -22,7 +23,8 @@ const SingleMovie = (props) => {
 
     const genres = props.singleMovie.genres.map(genre => <li className="single-movie-genre" key={ Date.now + genre }>{ genre }</li>);
     return (
-        <section className='single-movie' style={ background }>
+        <div className='single-movie' style={ background }>
+            <img className="logo" src={logo} alt="Rancid Tomatillos logo"/>
             <div className='screen'></div>
             <div className='movie-stats'>
                 <img className='poster' src={ props.singleMovie.poster_path } alt={ `${props.singleMovie.title} Movie Poster` } />
@@ -36,12 +38,11 @@ const SingleMovie = (props) => {
                 <ul className="genre-box">{ genres }</ul>
                 <hr />
                 <p>{ props.singleMovie.overview }</p>
-
                 <Link to={'/'} className='backArrow'>
                     <img role='button' src={ backArrow } alt='back button' width='75vw' height='75vh' onClick={ props.goBack } />
                 </Link>
-                </div>
-        </section>
+            </div>
+        </div>
     );
 };
 
