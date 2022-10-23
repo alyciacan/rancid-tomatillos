@@ -13,7 +13,7 @@ class App extends Component {
     this.state = {
       allMovies: [],
       singleMovie: null,
-      error: '',
+      error: null,
       filteredMovies: [],
       searching: false
     };
@@ -55,7 +55,6 @@ class App extends Component {
   slidesToShow = () => {
     const numFilteredMovies = this.state.filteredMovies.length;
     return (numFilteredMovies < 4 && numFilteredMovies > 0 ? numFilteredMovies : 4)
-  }
 
   render() {
     return (
@@ -66,12 +65,15 @@ class App extends Component {
             exact path='/' 
             render={ () => (
               <div className='Container'>
-                  <MovieContainer
+                {!this.state.error 
+                ? <MovieContainer
                     moviesToRender={ !this.state.searching 
                       ? this.state.allMovies 
                       : this.state.filteredMovies }
                     slidesToShow={ this.slidesToShow }
                   />
+                : <Error />
+                }
               </div>
             ) }>
           </Route>
@@ -80,14 +82,17 @@ class App extends Component {
             render={ ({ match }) => {
               return (
               <div className="Container">
-                  <SingleMovie
+                {!this.state.error 
+                ?  <SingleMovie
                     id={ match.params.id }
                     singleMovie={ this.state.singleMovie }
                     goBack={ this.goBack }
                     expandView={ this.expandView }
-                  />
+                  /> 
+                : <Error />
+                }
               </div>
-    )} }>
+            )}}>
           </Route>
         </Switch>
       </main>
