@@ -56,7 +56,8 @@ class App extends Component {
   slidesToShow = () => {
     const numFilteredMovies = this.state.filteredMovies.length;
     return (numFilteredMovies < 4 && numFilteredMovies > 0 ? numFilteredMovies : 4)
-
+  }
+  
   render() {
     return (
       <main className="App">
