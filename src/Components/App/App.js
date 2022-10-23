@@ -31,6 +31,8 @@ class App extends Component {
 
   goBack = () => {
     this.setState({ singleMovie: null });
+    this.setState({ error: null })
+    console.log(this.state.error)
   };
 
   checkError = () => {
@@ -40,7 +42,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-      <Navbar />
+      <Navbar goBack={ this.goBack }/>
         <Switch>
           <Route
             exact path='/' 
