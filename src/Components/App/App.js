@@ -20,27 +20,27 @@ class App extends Component {
   }
 
   filterByRating = (searchTerm) => {
-   return searchTerm === 'All' ? this.state.allMovies : (this.state.allMovies.filter(movie => 
+    return searchTerm === 'All' ? this.state.allMovies : (this.state.allMovies.filter(movie =>
       movie.average_rating >= Number(searchTerm.slice(0, 1))
-      ))
-  }
+    ));
+  };
 
   filterByTitle = (searchTerm) => {
-    return this.state.allMovies.filter(movie => 
-      movie.title.toLowerCase().includes(searchTerm.toLowerCase()))
-  }
+    return this.state.allMovies.filter(movie =>
+      movie.title.toLowerCase().includes(searchTerm.toLowerCase()));
+  };
 
   filterSearch = (searchTerm, filterBy) => {
     const movies = filterBy === 'title' ? this.filterByTitle(searchTerm) : this.filterByRating(searchTerm);
-    this.setState({ filteredMovies: movies })
-    this.setState({ searching: searchTerm })
-  }
+    this.setState({ filteredMovies: movies });
+    this.setState({ searching: searchTerm });
+  };
 
   componentDidMount = () => {
     fetchAllMovies()
       .then(movieData => this.setState({ allMovies: movieData.movies }))
       .catch(error => this.setState({ error: error.message }));
-  }
+  };
 
   expandView = (id) => {
     fetchSingleMovie(id)
@@ -55,51 +55,51 @@ class App extends Component {
 
   slidesToShow = () => {
     const numFilteredMovies = this.state.filteredMovies.length;
-    return (numFilteredMovies < 4 && numFilteredMovies > 0 ? numFilteredMovies : 4)
-  }
-  
+    return (numFilteredMovies < 4 && numFilteredMovies > 0 ? numFilteredMovies : 4);
+  };
+
+
   render() {
     return (
       <main className="App">
       <Navbar filterSearch={ this.filterSearch } goBack={ this.goBack }/>
         <Switch>
           <Route
-            exact path='/' 
+            exact path='/'
             render={ () => (
               <div className='Container'>
-                {!this.state.error 
-                ? <MovieContainer
-                    moviesToRender={ !this.state.searching 
-                      ? this.state.allMovies 
+                { !this.state.error
+                  ? <MovieContainer
+                    moviesToRender={ !this.state.searching
+                      ? this.state.allMovies
                       : this.state.filteredMovies }
                     slidesToShow={ this.slidesToShow }
                   />
-                : <Error />
+                  : <Error />
                 }
               </div>
             ) }>
           </Route>
           <Route
             path='/:id'
-            render={ ({ match }) => {
-              return (
+            render={ ({ match }) => (
               <div className="Container">
-                {!this.state.error 
-                ?  <SingleMovie
+                { !this.state.error
+                  ? <SingleMovie
                     id={ match.params.id }
                     singleMovie={ this.state.singleMovie }
                     goBack={ this.goBack }
                     expandView={ this.expandView }
-                  /> 
-                : <Error />
+                  />
+                  : <Error />
                 }
               </div>
-            )}}>
+            ) }>
           </Route>
         </Switch>
       </main>
     );
   }
-};
+}
 
 export default App;

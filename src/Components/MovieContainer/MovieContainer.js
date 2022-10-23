@@ -15,6 +15,7 @@ const MovieContainer = (props) => {
         title={ movie.title }
         average_rating={ movie.average_rating }
         release_date={ movie.release_date }
+        data-cy="movie-card"
       />
     );
   });
@@ -54,12 +55,12 @@ const MovieContainer = (props) => {
   };
 
   return (
-    <div className="movieContainer">
-      { !props.moviesToRender.length 
-        ? <h5 className="no-movies-found">Sorry, there are no movies matching your search.</h5> 
+    <div className="movieContainer" data-cy='movie-container'>
+      { !props.moviesToRender.length
+        ? <h5 className="no-movies-found">Sorry, there are no movies matching your search.</h5>
         : <Slider { ...settings }>
-           { movieCards }
-          </Slider> }
+          { movieCards }
+        </Slider> }
     </div>
   );
 };

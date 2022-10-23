@@ -5,7 +5,7 @@ const MovieCard = (props) => {
     const id = props.id;
     return (
         <Link to={ `/${id}` }>
-            <div className="movieCard">
+            <div className="movieCard" data-cy="movie-card">
                 <img className="cardImage" src={ props.poster_path } alt={ `${props.title} Movie Poster` } />
                 <h2>{ props.title }</h2>
             </div>
