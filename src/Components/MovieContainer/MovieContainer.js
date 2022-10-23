@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const MovieContainer = (props) => {
-  const movieCards = props.allMovies.map(movie => {
+  const movieCards = props.moviesToRender.map(movie => {
     return (
       <MovieCard
         id={ movie.id }
@@ -23,7 +23,7 @@ const MovieContainer = (props) => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: props.slidesToShow(),
     slidesToScroll: 4,
     arrows: true,
     responsive: [
@@ -55,10 +55,12 @@ const MovieContainer = (props) => {
   };
 
   return (
-    <div className="movieContainer">
-      <Slider { ...settings }>
-        { movieCards }
-      </Slider>
+    <div className="movieContainer" data-cy='movie-container'>
+      { !props.moviesToRender.length
+        ? <h5 className="no-movies-found">Sorry, there are no movies matching your search.</h5>
+        : <Slider { ...settings }>
+          { movieCards }
+        </Slider> }
     </div>
   );
 };
