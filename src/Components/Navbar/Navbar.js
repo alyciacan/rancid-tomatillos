@@ -1,6 +1,7 @@
 import './Navbar.css';
 import logo from './logo.png';
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
   constructor(props) {
@@ -24,7 +25,9 @@ class Navbar extends Component {
   render() {
     return (
       <div className='navbar'>
-          <img src={logo} alt="Rancid Tomatillos logo" className='appTitle' />
+          <Link to="/" className='appTitle' onClick={ this.props.goBack } >
+            <img src={logo} role="button" alt="Rancid Tomatillos logo" />
+          </Link>
           <hr></hr>
           <p>Search by Title:</p>
           <input type="text" id="title" value={ this.state.searchBar } onChange={ this.handleChange } />

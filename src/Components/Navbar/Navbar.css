@@ -14,7 +14,12 @@ hr {
 }
 
 .appTitle {
-    color: #F0C808 
+    max-width:100%;
+}
+
+.appTitle > img {
+    max-width:100%;
+    min-width: 146px;
 }
 
 .genreList {
