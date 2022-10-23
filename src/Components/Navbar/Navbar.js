@@ -8,17 +8,18 @@ class Navbar extends Component {
     super(props);
     this.state = {
       searchBar: "",
-
     }
   }
   handleChange = (e) => {
-    this.setState({
+    e.target.id === 'title' && this.setState({
       searchBar: e.target.value
     })
+    this.props.filterSearch(e.target.value, e.target.id);
   }
 
-  clearInput = () => {
-    this.setState({ searchBar: ""})
+  clearInput = (e) => {
+    this.setState({ searchBar: ""});
+    this.handleChange(e);
   }
 
   render() {
@@ -29,13 +30,15 @@ class Navbar extends Component {
           </Link>
           <hr></hr>
           <p>Search by Title:</p>
-          <input type="text" value={ this.state.searchBar } onChange={ this.handleChange } />
+          <input type="text" id="title" value={ this.state.searchBar } onChange={ this.handleChange } />
+          <button type="button" onClick={ this.clearInput }>Clear</button>
           <hr></hr>
           <p>Filter by Ratings:</p>
-          <select name="ratings">
+          <select name="ratings" id="average_rating" onChange={ this.handleChange }>
+            <option value="All">All</option>
             <option value="7+">7+</option>
             <option value="5+">5+</option>
-            <option value="under 5">4 or less</option>
+            <option value="3+">3+</option>
           </select>
       </div>
     )
