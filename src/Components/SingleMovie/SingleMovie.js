@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const SingleMovie = (props) => {
-    useEffect((props) => {
+    useEffect(() => {
         props.expandView(props.id);
     }, []);
 
