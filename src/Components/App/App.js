@@ -50,6 +50,7 @@ class App extends Component {
 
   goBack = () => {
     this.setState({ singleMovie: null });
+    this.setState({ error: null })
   };
 
   slidesToShow = () => {
@@ -61,7 +62,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <Navbar filterSearch={ this.filterSearch } />
+      <Navbar filterSearch={ this.filterSearch } goBack={ this.goBack }/>
         <Switch>
           <Route
             exact path='/'
