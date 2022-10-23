@@ -13,11 +13,30 @@ class App extends Component {
     this.state = {
       allMovies: [],
       singleMovie: null,
-      error: null
+      error: null,
+      filteredMovies: [],
+      searching: false
     };
   }
 
-  componentDidMount() {
+  filterByRating = (searchTerm) => {
+   return searchTerm === 'All' ? this.state.allMovies : (this.state.allMovies.filter(movie => 
+      movie.average_rating >= Number(searchTerm.slice(0, 1))
+      ))
+  }
+
+  filterByTitle = (searchTerm) => {
+    return this.state.allMovies.filter(movie => 
+      movie.title.toLowerCase().includes(searchTerm.toLowerCase()))
+  }
+
+  filterSearch = (searchTerm, filterBy) => {
+    const movies = filterBy === 'title' ? this.filterByTitle(searchTerm) : this.filterByRating(searchTerm);
+    this.setState({ filteredMovies: movies })
+    this.setState({ searching: searchTerm })
+  }
+
+  componentDidMount = () => {
     fetchAllMovies()
       .then(movieData => this.setState({ allMovies: movieData.movies }))
       .catch(error => this.setState({ error: error.message }));
@@ -33,20 +52,28 @@ class App extends Component {
     this.setState({ singleMovie: null });
   };
 
-  checkError = () => {
-    !this.state.error ? <MovieContainer allMovies={ this.state.allMovies } /> : <Error />
-  }
+  slidesToShow = () => {
+    const numFilteredMovies = this.state.filteredMovies.length;
+    return (numFilteredMovies < 4 && numFilteredMovies > 0 ? numFilteredMovies : 4)
 
   render() {
     return (
       <main className="App">
-      <Navbar />
+      <Navbar filterSearch={ this.filterSearch } />
         <Switch>
           <Route
             exact path='/' 
             render={ () => (
               <div className='Container'>
-                {!this.state.error ? <MovieContainer allMovies={ this.state.allMovies } /> : <Error />}
+                {!this.state.error 
+                ? <MovieContainer
+                    moviesToRender={ !this.state.searching 
+                      ? this.state.allMovies 
+                      : this.state.filteredMovies }
+                    slidesToShow={ this.slidesToShow }
+                  />
+                : <Error />
+                }
               </div>
             ) }>
           </Route>
@@ -65,7 +92,7 @@ class App extends Component {
                 : <Error />
                 }
               </div>
-    )}}>
+            )}}>
           </Route>
         </Switch>
       </main>
