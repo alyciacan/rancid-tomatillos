@@ -1,9 +1,12 @@
 .App {
-  display: flex;
   text-align: center;
   color: white;
   font-family: 'Raleway', sans-serif;
+}
+
+.main-view {
   max-width: 100vw;
+  display: flex;
 }
 
 .Container {
