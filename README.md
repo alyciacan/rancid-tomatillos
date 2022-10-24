@@ -23,6 +23,10 @@
   <img width="600" alt="Rancid Tomatillos" logo" src="">
 </p>
 
+Rancid Tomatillos is an application that utilizes multiple APIs to display movie data in a user friendly way. The main goal of this project was to gain competency with React fundamentals, create a multi-page UX using React Router, and to learn how to test React components & asynchronous JS using Cypress.
+
+As a user, you will be able to view all movies from the API on page load, as well as search for a specific title or search movies by rating. If the user would like to view more details about a specific movie they can click on a movie card and a single movies overview will be displayed.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Project Spec
@@ -39,6 +43,9 @@ Rancid Tomatillos is an application built in week 14 of the [Turing School of So
 
 ## Technologies
 
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
@@ -104,6 +111,8 @@ The following resources helped us build this project:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Reflections
+
+During this project, we were able to to comfortably work together and asynchronuously do to our continuous transparent and respectful communication. Together we were able to plan and execute this project without many hurdles. When we struggled on content we worked together to find a solution so that we had clear understanding of the material and how to implement the new techologies! We did not always find the right answers, but we stepped out of our comfort zone exploring other npm libraries and reached out to our support system to help solidify anything we were uncertain of.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
