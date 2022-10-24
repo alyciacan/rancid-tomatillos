@@ -112,6 +112,8 @@ The following resources helped us build this project:
 
 ## Reflections
 
+During this project, we were able to to comfortably work together and asynchronuously do to our continuous transparent and respectful communication. Together we were able to plan and execute this project without many hurdles. When we struggled on content we worked together to find a solution so that we had clear understanding of the material and how to implement the new techologies! We did not always find the right answers, but we stepped out of our comfort zone exploring other npm libraries and reache out to our support system to help solidify anything we were uncertain of.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
