@@ -20,7 +20,7 @@
 ## About The Project
 
 <p align="center">
-  <img width="600" alt="Rancid Tomatillos" logo" src="">
+  <img width="600" alt="Rancid Tomatillos" logo" src="https://user-images.githubusercontent.com/103063934/197625789-9a6ffc7a-c6cb-4660-87b6-c2268fb15c9b.png">
 </p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
