@@ -59,14 +59,16 @@ class App extends Component {
   };
 
 
+
   render() {
     return (
       <main className="App">
-      <Navbar filterSearch={ this.filterSearch } goBack={ this.goBack }/>
         <Switch>
           <Route
             exact path='/'
             render={ () => (
+              <div className="main-view">
+              <Navbar filterSearch={ this.filterSearch } goBack={ this.goBack }/>
               <div className='Container'>
                 { !this.state.error
                   ? <MovieContainer
@@ -77,6 +79,7 @@ class App extends Component {
                   />
                   : <Error />
                 }
+              </div>
               </div>
             ) }>
           </Route>
