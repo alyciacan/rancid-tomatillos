@@ -23,8 +23,9 @@ const SingleMovie = (props) => {
 
     const genres = props.singleMovie.genres.map(genre => <li className="single-movie-genre" key={ Date.now + genre }>{ genre }</li>);
     return (
-        <div className='single-movie' style={ background }>
+        <section className='single-movie' data-cy='single-movie' style={ background }>
             <img className="logo" src={logo} alt="Rancid Tomatillos logo"/>
+
             <div className='screen'></div>
             <div className='movie-stats'>
                 <img className='poster' src={ props.singleMovie.poster_path } alt={ `${props.singleMovie.title} Movie Poster` } />
@@ -38,11 +39,11 @@ const SingleMovie = (props) => {
                 <ul className="genre-box">{ genres }</ul>
                 <hr />
                 <p>{ props.singleMovie.overview }</p>
-                <Link to={'/'} className='backArrow'>
+                <Link to={ '/' } className='backArrow'>
                     <img role='button' src={ backArrow } alt='back button' width='75vw' height='75vh' onClick={ props.goBack } />
                 </Link>
             </div>
-        </div>
+        </section>
     );
 };
 
