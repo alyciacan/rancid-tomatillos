@@ -1,70 +1,121 @@
-## Rancid Tomatillos ##
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Rancid Tomatillos
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [About The Project](#about-the-project)
+- [Project Spec](#project-spec)
+- [Technologies](#technologies)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Contact](#contact)
+- [Acknowledgments](#acknowledgments)
+- [Reflections](#reflections)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## About The Project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align="center">
+  <img width="600" alt="Rancid Tomatillos" logo" src="">
+</p>
 
-### `npm test`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Spec
 
-### `npm run build`
+Rancid Tomatillos is an application built in week 14 of the [Turing School of Software and Design](https://turing.edu/) front-end engineering program. The goals of this [group project](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html) were to:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Utilize React and React Router
+- Test the UI/UX using Cypress
+- Utilize Lighthouse and Wave for accessibility
+- Make network requests to API endpoints to retrieve and manipulate data
+- Implement error handling
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies
 
-### `npm run eject`
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- GETTING STARTED -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You can find the project [here](https://github.com/alyciacan/rancid-tomatillos) and follow the instructions below to get started.
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone the repo
+   ```sh
+   git clone git@github.com:emilyjmiles/fitlit-group-project.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   npm start
+   ```
+3. Explore the website.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Code Splitting
+<!-- USAGE EXAMPLES -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Usage
 
-### Analyzing the Bundle Size
+New feature ideas:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Making a Progressive Web App
+## Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+We utilized tesing to create a smooth user experience using [Cypress](https://www.cypress.io/).
 
-### Advanced Configuration
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<!-- CONTACT -->
 
-### Deployment
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+[![Contributors][contributors-shield]][contributors-url]
 
-### `npm run build` fails to minify
+Alycia Canavan - [LinkedIn](https://www.linkedin.com/in/alycia-canavan/) [GitHub](https://github.com/alyciacan)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Emily Miles - [LinkedIn](https://www.linkedin.com/in/emilyjmiles/) [GitHub](https://github.com/emilyjmiles)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+
+## Acknowledgments
+
+The following resources helped us build this project:
+
+[![MDN Docs][mdn-shield]][mdn]
+[![Turing School](https://img.shields.io/badge/Turing_School-030303?style=for-the-badge)](https://turing.edu/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Reflections
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[youtube-shield]: https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white
+[charts-youtube-link]: https://www.youtube.com/c/ChartJS-tutorials
+[mdn-shield]: https://img.shields.io/badge/MDN_Web_Docs-black?style=for-the-badge&logo=mdnwebdocs&logoColor=white
+[mdn]: https://developer.mozilla.org/en-US/
+[charts-url]: https://www.chartjs.org/docs/latest/
+[charts]: https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.js&logoColor=white
+[contributors-shield]: https://img.shields.io/badge/Contributors-2-2ea44f?style=for-the-badge
+[contributors-url]: https://github.com/emilyjmiles/fitlit-group-project/graphs/contributors
+[product-screenshot]: images/screenshot.png
