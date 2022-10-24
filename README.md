@@ -20,7 +20,7 @@
 ## About The Project
 
 <p align="center">
-  <img width="600" alt="Rancid Tomatillos" logo" src="">
+  <img width="600" alt="Rancid Tomatillos" logo" src="https://user-images.githubusercontent.com/103063934/197625789-9a6ffc7a-c6cb-4660-87b6-c2268fb15c9b.png">
 </p>
 
 Rancid Tomatillos is an application that utilizes multiple APIs to display movie data in a user friendly way. The main goal of this project was to gain competency with React fundamentals, create a multi-page UX using React Router, and to learn how to test React components & asynchronous JS using Cypress.
