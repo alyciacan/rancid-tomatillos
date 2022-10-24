@@ -50,7 +50,7 @@ class App extends Component {
 
   goBack = () => {
     this.setState({ singleMovie: null });
-    this.setState({ error: null })
+    this.setState({ error: null });
   };
 
   slidesToShow = () => {
@@ -59,24 +59,27 @@ class App extends Component {
   };
 
 
+
   render() {
     return (
       <main className="App">
-      <Navbar filterSearch={ this.filterSearch } goBack={ this.goBack }/>
         <Switch>
           <Route
             exact path='/'
             render={ () => (
-              <div className='Container'>
-                { !this.state.error
-                  ? <MovieContainer
-                    moviesToRender={ !this.state.searching
-                      ? this.state.allMovies
-                      : this.state.filteredMovies }
-                    slidesToShow={ this.slidesToShow }
-                  />
-                  : <Error />
-                }
+              <div className="main-view">
+                <Navbar filterSearch={ this.filterSearch } goBack={ this.goBack } />
+                <div className='Container'>
+                  { !this.state.error
+                    ? <MovieContainer
+                      moviesToRender={ !this.state.searching
+                        ? this.state.allMovies
+                        : this.state.filteredMovies }
+                      slidesToShow={ this.slidesToShow }
+                    />
+                    : <Error />
+                  }
+                </div>
               </div>
             ) }>
           </Route>
