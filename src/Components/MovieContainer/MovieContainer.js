@@ -19,19 +19,20 @@ const MovieContainer = (props) => {
       />
     );
   });
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: props.slidesToShow(),
-    slidesToScroll: 4,
+    slidesToScroll: 6,
     arrows: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 4,
+          slidesToScroll: 4,
           infinite: true,
           dots: true
         }
@@ -39,16 +40,16 @@ const MovieContainer = (props) => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          initialSlide: 1
         }
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToShow: 2,
+          slidesToScroll: 2
         }
       }
     ]
