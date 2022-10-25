@@ -1,7 +1,7 @@
 .movieContainer {
-  max-width: 96%;
+  width: 100%;
   height: 75vh;
-  scrollbar-color: black;
+  outline: none;
   position: relative;
 }
 
