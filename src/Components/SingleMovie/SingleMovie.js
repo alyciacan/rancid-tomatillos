@@ -2,7 +2,8 @@ import './SingleMovie.css';
 import backArrow from './backArrow.png';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../Navbar/logo.png';
+// import logo from '../Navbar/logo.png';
+import neonLogo from '../Navbar/neon-logo-2.png';
 
 const SingleMovie = (props) => {
     useEffect(() => {
@@ -24,8 +25,6 @@ const SingleMovie = (props) => {
     const genres = props.singleMovie.genres.map(genre => <li className="single-movie-genre" key={ Date.now + genre }>{ genre }</li>);
     return (
         <section className='single-movie' data-cy='single-movie' style={ background }>
-            <img className="logo" src={logo} alt="Rancid Tomatillos logo"/>
-
             <div className='screen'></div>
             <div className='movie-stats'>
                 <img className='poster' src={ props.singleMovie.poster_path } alt={ `${props.singleMovie.title} Movie Poster` } />

@@ -6,6 +6,7 @@ import MovieContainer from '../MovieContainer/MovieContainer';
 import SingleMovie from '../SingleMovie/SingleMovie';
 import Error from '../Error/Error';
 import { Route, Switch } from 'react-router-dom';
+import neonLogo from '../Navbar/neon-logo-2.png';
 
 class App extends Component {
   constructor () {
@@ -55,10 +56,8 @@ class App extends Component {
 
   slidesToShow = () => {
     const numFilteredMovies = this.state.filteredMovies.length;
-    return (numFilteredMovies < 4 && numFilteredMovies > 0 ? numFilteredMovies : 4);
+    return (numFilteredMovies < 6 && numFilteredMovies > 0 ? numFilteredMovies : 6);
   };
-
-
 
   render() {
     return (
@@ -81,22 +80,26 @@ class App extends Component {
                   }
                 </div>
               </div>
-              </div>
             ) }>
           </Route>
           <Route
             path='/:id'
             render={ ({ match }) => (
-              <div className="Container">
-                { !this.state.error
-                  ? <SingleMovie
-                    id={ match.params.id }
-                    singleMovie={ this.state.singleMovie }
-                    goBack={ this.goBack }
-                    expandView={ this.expandView }
-                  />
-                  : <Error />
-                }
+              <div>
+                <div className='logo-bar'>
+                  <img className="logo" src={ neonLogo } alt="Rancid Tomatillos logo" />
+                </div>
+                <div className="Container">
+                  { !this.state.error
+                    ? <SingleMovie
+                      id={ match.params.id }
+                      singleMovie={ this.state.singleMovie }
+                      goBack={ this.goBack }
+                      expandView={ this.expandView }
+                    />
+                    : <Error />
+                  }
+                </div>
               </div>
             ) }>
           </Route>
