@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
+![neon-logo-2](https://user-images.githubusercontent.com/103063934/197662043-05153062-5939-483e-83b7-61ff298d4a31.png)
 
-# Rancid Tomatillos
 
 ## Table of Contents
 
@@ -18,10 +18,6 @@
 ---
 
 ## About The Project
-
-<p align="center">
-  <img width="600" alt="Rancid Tomatillos" logo" src="https://user-images.githubusercontent.com/103063934/197625789-9a6ffc7a-c6cb-4660-87b6-c2268fb15c9b.png">
-</p>
 
 Rancid Tomatillos is an application that utilizes multiple APIs to display movie data in a user friendly way. The main goal of this project was to gain competency with React fundamentals, create a multi-page UX using React Router, and to learn how to test React components & asynchronous JS using Cypress.
 
@@ -77,7 +73,16 @@ You can find the project [here](https://github.com/alyciacan/rancid-tomatillos) 
 
 ## Usage
 
+
+https://user-images.githubusercontent.com/103063934/197662234-e79cff19-5f5b-410e-a0fc-a55c6bdd9f81.mov
+
+https://user-images.githubusercontent.com/103063934/197663699-3a2552df-8892-4a76-a0a1-297f47b6a77f.mov
+
 New feature ideas:
+
+- [ ] Make mobile accessible
+- [ ] Refactor Slick Slider to remove "ghost" movie cards
+- [ ] Refactor filter movies functionality to for inputs
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
