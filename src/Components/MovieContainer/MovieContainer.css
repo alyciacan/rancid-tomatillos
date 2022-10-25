@@ -5,4 +5,9 @@
   position: relative;
 }
 
-
+@media (max-width: 1030px) {
+  .movieContainer {
+    height: 62vh;
+    overflow-y: hidden;
+  }
+}
