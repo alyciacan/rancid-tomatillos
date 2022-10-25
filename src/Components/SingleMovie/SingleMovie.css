@@ -64,14 +64,6 @@ hr {
 }
 
 .screen {
-    /* display:inline-block;
-    background-color: black;
-    opacity: .6;
-    z-index: 1;
-    height: 70%;
-    width: 90.33%;
-    position: absolute; */
-
     display:inline-block;
     background-color: black;
     opacity: .6;
