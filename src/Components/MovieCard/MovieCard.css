@@ -17,6 +17,7 @@
 }
 
 .cardImage {
+
     min-height: 80%;
     border: 2px solid #ffffff;
     object-fit: cover;
@@ -26,6 +27,5 @@
 .movie-title {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    /* font-size: 1rem; */
+    font-size: 0.85rem;
 }
